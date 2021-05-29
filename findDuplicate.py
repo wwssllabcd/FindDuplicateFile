@@ -1,17 +1,17 @@
 
 import sys
-sys.path.append(r'D:\GitHub\Python')
+sys.path.append(r'D:/GitHub/Python')
 from EricCorePy.Utility.EricUtility import EricUtility
 
 if len(sys.argv) != 2:
     exit
 
 path = sys.argv[1]
-path = path + r'\\'
+path = path + r'/'
 print('Start get list, path = ')
 print(path)
 
-resultFolder = path + r"dup\\"
+resultFolder = path + r"dup/"
 
 u = EricUtility()
 u.make_folder(resultFolder)
