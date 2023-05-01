@@ -13,20 +13,20 @@ from EricCorePy.Utility.EricUtility import EricUtility
 if __name__ == '__main__':
     u = EricUtility()
 
-    folderPath = "E:\Cute_DL\webcam\g"
+    folderPath = "E:/download_video/need_gg"
     print(folderPath)
     files = listdir(folderPath)
 
     res = "chcp 65001" + u.crlf()
     revert = "chcp 65001" + u.crlf()
     for f in files:
-        newFileName = f.replace("", "") 
+        newFileName = "gg_" + f.replace(" ", "")
         res += 'ren "' + folderPath + '\\' + f + '" "' + newFileName + '"'+ u.crlf()
         revert += 'ren "' + folderPath + '\\' + newFileName + '" "' + f + '"'+ u.crlf()
 
     
     #print(res)
-    u.to_file("batRename.bat", res)
+    u.to_file("ReName.bat", res)
     u.to_file("revert.bat", revert)
 
     print('Finish')
