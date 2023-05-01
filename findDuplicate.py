@@ -3,7 +3,7 @@ import sys
 from os import listdir
 from os.path import isfile, join, getmtime
 
-sys.path.append(r'D://GitHub//python')
+sys.path.append(r'./../')
 from EricCorePy.Utility.EricUtility import *
 
 
