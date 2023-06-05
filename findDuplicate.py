@@ -106,15 +106,16 @@ def main():
     #     exit()
 
     #for debug
-    paths.append("E://test")
+    paths.append("E://Cute_DL")
+    #paths.append("E://Cute_DL/leak")
  
-   
+ 
     
     print(paths)
 
     fileColls = []
     for path in paths:
-        fdPath = path + "//"
+        fdPath = path + "/"
         fileColls = get_fileObj_colls(fdPath, fileColls)
     
     onlyFiles = []
