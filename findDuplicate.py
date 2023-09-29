@@ -75,20 +75,29 @@ def get_duplicate_file_by_compare_file_data(fileDirGroupDirBySize):
     return dupFileNameList
 
 def get_file_name_by_full_path(fullPath):
-    idx = fullPath.rfind("\\")
+    idx = fullPath.rfind("/")
     if idx == -1:
-        idx = fullPath.rfind("/")
+        idx = fullPath.rfind("\\")
     res = fullPath[idx+1:]
-    return res
+    return fullPath[0:idx], res
+
 
 def rename_file(fileColls):
     u = EricUtility()
     res = "chcp 65001" + u.crlf()
-    for file in fileColls:
-        fileName = get_file_name_by_full_path(file)
+
+    for fileFullPath in fileColls:
+      
         #加上 zzz 可保持排序在最後
-        res += 'ren "' + file + '" "ZZZZ_dup_' + fileName + '"' + u.crlf()
-        #res += 'move "' + file + '" E:\\Download\\tmp\\dup' + u.crlf()
+        dir, file = get_file_name_by_full_path(fileFullPath)
+
+
+        #res += "ren '" + fileFullPath + "' '" + file + ".dup'" + "\n"
+        #res += 'ren "' + fileFullPath + '" "' + file + '.dup"re \n'
+
+        #斜槓要用兩條，用一條會認不道
+        res += 'rename "' + dir + '\\' + file + '" "' + file + '.dup"' + u.crlf()
+
 
     return res
 
@@ -106,9 +115,11 @@ def main():
     #     exit()
 
     #for debug
-    paths.append("E://Cute_DL")
+    #paths.append("E://Cute_DL")
     #paths.append("E://Cute_DL/leak")
+    #paths.append("E://Cute_DL/fc2")
  
+    paths.append("E:\download_video")
  
     
     print(paths)
