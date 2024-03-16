@@ -115,11 +115,21 @@ def main():
     #     exit()
 
     #for debug
-    #paths.append("E://Cute_DL")
-    #paths.append("E://Cute_DL/leak")
-    #paths.append("E://Cute_DL/fc2")
+    #paths.append("E:/Cute_DL")
+    #paths.append("E:/Cute_DL/leak")
+    #paths.append("E:/Cute_DL/fc2")
  
-    paths.append("E:\download_video")
+    #paths.append("E:/download_video")
+
+    #paths.append("E:/download_video/tmp")
+    paths.append("E:/download_video/need_gg_cute")
+
+    #paths.append("E:/Cute_DL/webcam/gg")
+
+    #paths.append("E:/Cute_DL//mask_reserve")
+    #paths.append("E:/Cute_DL//mask_uncensored")
+
+    
  
     
     print(paths)
